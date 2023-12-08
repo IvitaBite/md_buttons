@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Buttons</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+            font-weight: 400;
+
+            color-scheme: light;
+
+            font-synthesis: none;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .header {
+            background-color: #2C3131;
+            text-align: left;
+            padding: 1em;
+        }
+
+        .header h1 {
+            color: #FFFFFF;
+            font-family: ABeeZee;
+            font-size: 56px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 120%;
+        }
+
+        .button {
+            position: relative;
+            border-radius: 3px;
+            padding: 16px;
+            margin-right: 15px;
+            align-items: center;
+        }
+
+        .button-body {
+            display: inline-flex;
+            padding: 20px 40px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            font-family: ABeeZee;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 140%;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .first {
+            background-color: #017187;
+            color: #FFFFFF;
+            border: 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .first:hover {
+            background-color: #67AAB7;
+        }
+
+        .first:disabled {
+            border: 2px solid #CACACA;
+            background: #E9E9E9;
+            color: #A9A9A9;
+            cursor: not-allowed;
+        }
+
+        .second {
+            color: #017187;
+            border: 2px solid #017187;
+            transition: background-color 0.3s ease;
+        }
+
+        .second:hover {
+            color: #67AAB7;
+            border: 2px solid #67AAB7;
+        }
+
+        .second:disabled {
+            border: 2px solid #CACACA;
+            color: #A9A9A9;
+            cursor: not-allowed;
+        }
+
+        .buttonFull-body {
+            display: inline-flex;
+            padding: 13px 25px 15px 25px;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-radius: 100px;
+            text-align: center;
+            font-family: Inter;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 100%;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .primary {
+            width: 152px;
+            border: 1px solid #F43F5E;
+            background-color: #F43F5E;
+            color: #FFFFFF;
+            transition: background-color 0.3s ease;
+        }
+
+        .primary:hover {
+            border: 1px solid #9F1239;
+            background-color: #9F1239;
+        }
+
+        .primary:disabled {
+            width: 152px;
+            border: 1px solid #E5E7EB;
+            background-color: #E5E7EB;
+            color: #9CA3AF;
+            cursor: not-allowed;
+        }
+
+        .secondary {
+            width: 173px;
+            border: 1px solid #0EA5E9;
+            background-color: #0EA5E9;
+            color: #FFFFFF;
+            transition: background-color 0.3s ease;
+        }
+
+        .secondary:hover {
+            border: 1px solid #075985;
+            background-color: #075985;
+        }
+
+        .secondary:disabled {
+            width: 173px;
+            border: 1px solid #E5E7EB;
+            background-color: #E5E7EB;
+            color: #9CA3AF;
+            cursor: not-allowed;
+        }
+
+        .primaryOne {
+            border: 2px solid #F43F5E;
+            color: #F43F5E;
+            gap: 25px;
+            transition: background-color 0.3s ease;
+        }
+
+        .primaryOne:hover {
+            border: 2px solid #9F1239;
+            box-shadow: 0 0 0 4px #FDA4AF;
+            color: #9F1239;
+        }
+
+        .primaryOne:disabled {
+            border: 2px solid #E5E7EB;
+            color: #9CA3AF;
+            box-shadow: 0 0 0 0;
+            cursor: not-allowed;
+        }
+
+        .secondaryOne {
+            border: 2px solid #0EA5E9;
+            color: #0EA5E9;
+            gap: 25px;
+            transition: background-color 0.3s ease;
+        }
+
+        .secondaryOne:hover {
+            border: 2px solid #075985;
+            box-shadow: 0 0 0 4px #7DD3FC;
+            color: #075985;
+        }
+
+        .secondaryOne:disabled {
+            border: 2px solid #E5E7EB;
+            color: #9CA3AF;
+            box-shadow: 0 0 0 0;
+            cursor: not-allowed;
+        }
+
+        .button-one {
+            display: inline-flex;
+            height: 61px;
+            padding: 14px 34px;
+            align-items: center;
+            gap: 4px;
+            border-radius: 30px;
+            background-color: #FFD159;
+            box-shadow: 0px 14px 23px 0px rgba(28, 37, 44, 0.08);
+            color: #FFFFFF;
+            text-align: center;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: Avenir Next;
+            font-size: 21px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 120%;
+            margin-right: 15px;
+            border: 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-one:hover {
+            border: 1.5px solid #FFD159;
+            background-color: #FFFFFF;
+            color: #FFD159;
+        }
+
+        .button-one:disabled {
+            background-color: #F1EBF5;
+            color: #AEA8B2;
+            cursor: not-allowed;
+            border: 0;
+        }
+
+        .subscription {
+            display: inline-flex;
+            padding: 11px 20px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 3px;
+            border: 1px solid #5C6BC0;
+            background-color: #FFFFFF;
+            color: #5C6BC0;
+            font-family: Lato;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 19px;
+            letter-spacing: 2.358px;
+            margin-right: 15px;
+            text-transform: capitalize;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .subscription:hover {
+            background-color: #5C6BC0;
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+            color: #FFFFFF;
+        }
+
+        .subscription:disabled {
+            border: 1px solid #5C6BC0;
+            opacity: 0.5;
+            color: #5C6BC0;
+            background-color: #FFFFFF;
+            cursor: not-allowed;
+        }
+
+        .normal {
+            width: 94px;
+            height: 36px;
+            flex-shrink: 0;
+            background-color: #009688;
+            color: #FFFFFF;
+            text-align: center;
+            font-family: Roboto;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: 0.5px;
+            margin-right: 30px;
+            border: 0;
+            display: inline-flex;
+            padding: 11px 20px;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.24)) drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.12));
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .normal:hover {
+            background: linear-gradient(0deg, rgba(189, 189, 189, 0.30) 0%, rgba(189, 189, 189, 0.30) 100%), #009688;
+            border: 1px solid rgba(0, 0, 0, 0.00);
+            filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.24)) drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.12));
+        }
+
+        .normal:disabled {
+            background: rgba(79, 79, 79, 0.26);
+            color: rgba(0, 0, 0, 0.38);
+            border: 0;
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .round {
+            width: 56px;
+            height: 56px;
+            flex-shrink: 0;
+            background-color: #009688;
+            stroke-width: 0.5px;
+            stroke: rgba(0, 0, 0, 0.00);
+            filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.24)) drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.12));
+            color: #FFFFFF;
+            font-size: 30px;
+            margin-right: 30px;
+            border-radius: 30px;
+            border: 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .round:hover {
+            border: 0.5px solid rgba(0, 0, 0, 0.00);
+            filter: drop-shadow(0px 16px 16px rgba(0, 0, 0, 0.24)) drop-shadow(0px 0px 16px rgba(0, 0, 0, 0.12));
+        }
+
+        .round:disabled {
+            background: rgba(79, 79, 79, 0.26);
+            border: 0;
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .button-two {
+            /*display: inline-flex;*/
+            padding: 8px 6px;
+            align-items: center;
+            gap: 4px;
+            color: #333333;
+            text-align: center;
+            font-family: Inter;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            border: 0;
+            margin-right: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-two:hover {
+            color: #56CCF2;
+        }
+
+        .button-two:disabled {
+            color: rgba(28, 52, 84, 0.26);
+            cursor: not-allowed;
+        }
+
+        .button-three {
+            /*display: flex;*/
+            width: 196px;
+            height: 48px;
+            padding: 16px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+            background-color: #97144D;
+            border: 0;
+            margin-right: 30px;
+            color: #FFFFFF;
+            text-align: center;
+            font-feature-settings: 'clig' off, 'liga' off;
+            /* Component/Body/body-bold-2 */
+            font-family: Lato;
+            font-size: 14px;
+            font-style: normal;
+            text-transform: capitalize;
+            font-weight: 700;
+            line-height: 16px; /* 128.571% */
+            letter-spacing: 0.26px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-three:hover {
+            background-color: #ED1164;
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+        .button-three:disabled {
+            background-color: #B4B4B4;
+            font-size: 16px;
+            line-height: 20px;
+            cursor: not-allowed;
+        }
+
+        .button-four {
+            width: 245px;
+            height: 60px;
+            flex-shrink: 0;
+            border-radius: 4px;
+            background-color: transparent;
+            border: 2px solid #15499F;
+            color: #FFFFFF;
+            text-align: center;
+            font-family: Montserrat;
+            font-size: 17px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 140%;
+            margin-right: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-four:hover {
+            border-radius: 4px;
+            border: 4px solid #246CE2;
+        }
+
+        .button-four:active {
+            border-radius: 4px;
+            background: #0B2550;
+            border: 4px solid #0B2550;
+        }
+
+        .button-four:disabled {
+            background: #A9A9A9;
+            border: 0;
+            cursor: not-allowed;
+        }
+
+        .button-five {
+            width: 245px;
+            height: 48px;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            background-color: #F2F2F2;
+            color: #000000;
+            text-align: center;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: Barlow;
+            font-size: 17px;
+            font-style: normal;
+            font-weight: 600;
+            border-radius: 4px;
+            border: 0;
+            line-height: 24px;
+            margin-right: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-five:hover {
+
+        }
+
+        .button-five:active {
+            background-color: #828282;
+        }
+
+        .button-five:disabled {
+            background-color: #F2F2F2;
+            cursor: not-allowed;
+        }
+
+        .toast {
+            position: relative;
+            border-radius: 3px;
+            padding: 8px;
+            margin-bottom: 15px;
+            max-width: 300px;
+            align-items: center;
+        }
+
+        .toast-body {
+            display: flex;
+            align-items: center;
+            color: #FFFFFF;
+            justify-content: space-between;
+            padding-left: 16px;
+            border-bottom: 1px solid #F1F1F1;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.10);
+        }
+
+        .info-toast {
+            background-color: #145599;
+        }
+
+        .success-toast {
+            background-color: #1FC24E;
+        }
+
+        .error-toast {
+            background-color: #FF2121;
+        }
+
+        .warning-toast {
+            background-color: #F17F22;
+        }
+
+        .default-toast {
+            background-color: #404040;
+        }
+
+        .close-button {
+            background-color: transparent;
+            border: none;
+            padding-right: 8px;
+            font-size: 2em;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+
+        .disabled .close-button {
+            color: #808080;
+            cursor: not-allowed;
+        }
+
+        .disabled.toast-body {
+            background-color: #FFFFFF;
+        }
+
+        .disabled.info-toast {
+            color: #145599;
+        }
+
+        .disabled.success-toast {
+            color: #1FC24E;
+        }
+
+        .disabled.error-toast {
+            color: #FF2121;
+        }
+
+        .disabled.warning-toast {
+            color: #F17F22;
+        }
+
+    </style>
+</head>
+<body>
+<section class="header">
+    <h1>Buttons</h1>
+</section>
+<section>
+    <div class="button">
+        <button class="button-body first">Button</button>
+        <button class="button-body first" disabled>Button</button>
+        <button class="button-body second">Button</button>
+        <button class="button-body second" disabled>Button</button>
+    </div>
+    <div class="button">
+        <button class="buttonFull-body primary">Primary Button</button>
+        <button class="buttonFull-body primary" disabled>Primary Button</button>
+        <button class="buttonFull-body secondary">Secondary Button</button>
+        <button class="buttonFull-body secondary" disabled>Secondary Button</button>
+    </div>
+    <div class="button">
+        <button class="buttonFull-body primaryOne">Primary Button</button>
+        <button class="buttonFull-body primaryOne" disabled>Primary Button</button>
+        <button class="buttonFull-body secondaryOne">Secondary Button</button>
+        <button class="buttonFull-body secondaryOne" disabled>Secondary Button</button>
+    </div>
+    <div class="button">
+        <button class="button-one">Button 1</button>
+        <button class="button-one" disabled>Button 1</button>
+        <button class="subscription">Subscription</button>
+        <button class="subscription" disabled>Subscription</button>
+    </div>
+    <div class="button">
+        <button class="normal">Normal</button>
+        <button class="normal" disabled>Normal</button>
+        <button class="round">+</button>
+        <button class="round" disabled>+</button>
+    </div>
+    <div class="button">
+        <button class="button-two">Button</button>
+        <button class="button-two" disabled>Button</button>
+        <button class="button-three">Primary Button</button>
+        <button class="button-three" disabled>Primary Button</button>
+    </div>
+</section>
+<section class="header">
+    <div class="button">
+        <button class="button-four">Button</button>
+        <button class="button-four" disabled>Button</button>
+    </div>
+    <div class="button">
+        <button class="button-five">Button</button>
+        <button class="button-five" disabled>Button</button>
+    </div>
+</section>
+<section class="header">
+    <h1>Toasts</h1>
+</section>
+<section>
+    <div class="toast">
+        <div class="toast-body info-toast">
+            <p>This is a toast for info</p>
+            <button type="button" class="close-button" data-dismiss="toast">&times;</button>
+        </div>
+        <div class="toast-body success-toast">
+            <p>This is a toast for success</p>
+            <button type="button" class="close-button" data-dismiss="toast">&times;</button>
+        </div>
+        <div class="toast-body error-toast">
+            <p>This is a toast for error</p>
+            <button type="button" class="close-button" data-dismiss="toast">&times;</button>
+        </div>
+        <div class="toast-body warning-toast">
+            <p>This is a toast for warning</p>
+            <button type="button" class="close-button" data-dismiss="toast">&times;</button>
+        </div>
+        <div class="toast-body default-toast">
+            <p>This is a default toast</p>
+            <button type="button" class="close-button" data-dismiss="toast">&times;</button>
+        </div>
+        <div class="toast-body info-toast disabled">
+            <p>This is a toast for info</p>
+            <button type="button" class="close-button" data-dismiss="toast">&times;</button>
+        </div>
+        <div class="toast-body success-toast disabled">
+            <p>This is a toast for success</p>
+            <button type="button" class="close-button" data-dismiss="toast">&times;</button>
+        </div>
+        <div class="toast-body error-toast disabled">
+            <p>This is a toast for error</p>
+            <button type="button" class="close-button" data-dismiss="toast">&times;</button>
+        </div>
+        <div class="toast-body warning-toast disabled">
+            <p>This is a toast for warning</p>
+            <button type="button" class="close-button" data-dismiss="toast">&times;</button>
+        </div>
+        <div class="toast-body action">
+            <p>Single line</p>
+            <button type="button" class="close-button" data-dismiss="toast">&times;</button>
+        </div>
+        <div class="toast-body action">
+            <p>Multiple lines of text. Vairākas teksta rindiņas. Varias líneas de texto.</p>
+            <button type="button" class="close-button" data-dismiss="toast">&times;</button>
+        </div>
+    </div>
+</section>
+
+<script type="module" src="/main.js"></script>
+</body>
+</html>
